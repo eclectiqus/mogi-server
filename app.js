@@ -5,7 +5,7 @@ var express = require('express')
   , http = require('http')
   , app = express()
   , server = http.createServer(app)
-  , io = require('socket.io')(server, {origins:'*:*'})
+  , io = require('socket.io').listen(server, {origins:'*:*'})
   , passport = require('passport')
   , db = require('./lib/db')
   , config = require('./lib/config');
@@ -55,23 +55,24 @@ app.use(require('./lib/histories'));
 app.use(require('./lib/groups'));
 app.use(require('./lib/pictures'));
 
-
-  io.use(function(socket, next) {
-
-    if ( !socket.request._query.token ) {
-      return next(null, false);
+io.configure(function() {
+  io.set('log level', 1);
+  //io.set("transports", ["xhr-polling"]);
+  io.set('authorization', function(handshake, done) {
+    if ( !handshake.query.token ) {
+      return done(null, false);
     }
 
-    auth.validateToken(socket.request._query.token, function(err, user, info) {
+    auth.validateToken(handshake.query.token, function(err, user, info) {
       if (err) { return done(err, false); }
       if (!user) { return done(null, false); }
       if ( info.scope && info.scope.indexOf('admin') === -1 ) {
-        return next(null, false);
+        return done(null, false);
       }
-      next(null, true);
+      done(null, true);
     });
   });
-
+});
 
 app.set('sockets', io.sockets);
 
