@@ -5,7 +5,7 @@ var express = require('express')
   , http = require('http')
   , app = express()
   , server = http.createServer(app)
-  , io = require('socket.io').listen(server, {origins:'*:*'})
+  , io = require('socket.io')(server, {origins:'*:*'})
   , passport = require('passport')
   , db = require('./lib/db')
   , config = require('./lib/config')
@@ -61,23 +61,41 @@ app.use(require('./lib/histories'));
 app.use(require('./lib/groups'));
 app.use(require('./lib/pictures'));
 
-io.configure(function() {
-  io.set('log level', 1);
-  //io.set("transports", ["xhr-polling"]);
-  io.set('authorization', function(handshake, done) {
-    if ( !handshake.query.token ) {
-      return done(null, false);
+//io.configure(function() {
+//  io.set('log level', 1);
+//  //io.set("transports", ["xhr-polling"]);
+//  io.set('authorization', function(handshake, done) {
+//    if ( !handshake.query.token ) {
+//      return done(null, false);
+//    }
+//
+//    auth.validateToken(handshake.query.token, function(err, user, info) {
+//      if (err) { return done(err, false); }
+//      if (!user) { return done(null, false); }
+//      if ( info.scope && info.scope.indexOf('admin') === -1 ) {
+//        return done(null, false);
+//      }
+//      done(null, true);
+//    });
+//  });
+//});
+
+io.use(function(socket, next){
+  var handshake = socket.request;
+  if (  !handshake._query.token ) {
+      return next(null, false);
     }
 
-    auth.validateToken(handshake.query.token, function(err, user, info) {
-      if (err) { return done(err, false); }
-      if (!user) { return done(null, false); }
+    auth.validateToken(handshake._query.token, function(err, user, info) {
+      if (err) { return next(err, false); }
+      if (!user) { return next(null, false); }
       if ( info.scope && info.scope.indexOf('admin') === -1 ) {
-        return done(null, false);
+        return next(null, false);
       }
-      done(null, true);
+      next(null, true);
     });
-  });
+
+  next();
 });
 
 app.set('sockets', io.sockets);
