@@ -8,7 +8,12 @@ var express = require('express')
   , io = require('socket.io').listen(server, {origins:'*:*'})
   , passport = require('passport')
   , db = require('./lib/db')
-  , config = require('./lib/config');
+  , config = require('./lib/config')
+  , cookieParser = require('cookie-parser')
+  , logger = require('morgan')
+  , methodOverride = require('method-override')
+  , errorHandler = require('errorhandler')
+  , bodyParser = require('body-parser');;
 
 
 // Express configuration
@@ -21,7 +26,7 @@ var allowCrossDomain = function(req, res, next) {
 
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
-      res.send(200);
+      res.sendStatus(200);
     }
     else {
       next();
@@ -32,15 +37,16 @@ if (process.env.PORT == null){
     console.warn('process.env.PORT is null!');
 }
 app.set('port', process.env.PORT || 3000);
-app.use(express.logger('dev'));
+app.use(logger('dev'));
 app.use(allowCrossDomain);
-app.use(express.cookieParser());
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride());
 app.use(passport.initialize());
-app.use(app.router);
-app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+if ('development' == app.get('env')) {
+  app.use(errorHandler({dumpExceptions: true, showStack: true}));
+}
 
 // Passport configuration
 var auth = require('./lib/auth');
