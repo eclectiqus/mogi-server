@@ -61,25 +61,6 @@ app.use(require('./lib/histories'));
 app.use(require('./lib/groups'));
 app.use(require('./lib/pictures'));
 
-//io.configure(function() {
-//  io.set('log level', 1);
-//  //io.set("transports", ["xhr-polling"]);
-//  io.set('authorization', function(handshake, done) {
-//    if ( !handshake.query.token ) {
-//      return done(null, false);
-//    }
-//
-//    auth.validateToken(handshake.query.token, function(err, user, info) {
-//      if (err) { return done(err, false); }
-//      if (!user) { return done(null, false); }
-//      if ( info.scope && info.scope.indexOf('admin') === -1 ) {
-//        return done(null, false);
-//      }
-//      done(null, true);
-//    });
-//  });
-//});
-
 io.use(function(socket, next){
   var handshake = socket.request;
   if (  !handshake._query.token ) {
