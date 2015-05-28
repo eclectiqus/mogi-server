@@ -13,7 +13,8 @@ var express = require('express')
   , logger = require('morgan')
   , methodOverride = require('method-override')
   , errorHandler = require('errorhandler')
-  , bodyParser = require('body-parser');;
+  , bodyParser = require('body-parser')
+  ,	streams = require('./lib/streams/streams.js')();
 
 
 // Express configuration
@@ -80,6 +81,7 @@ io.use(function(socket, next){
 });
 
 app.set('sockets', io.sockets);
+app.set('streams', streams);
 
 //{force: true}
 db.sequelize.sync().complete(function(err) {
