@@ -55,33 +55,19 @@ var auth = require('./lib/auth');
 app.post('/token', auth.tokenEndpoint);
 app.use(require('./lib/config/wizard'));
 app.use(require('./lib/users'));
-app.use(require('./lib/streams'));
+//TODO app.use(require('./lib/streams'));
 app.use(require('./lib/videos'));
 app.use(require('./lib/locations'));
 app.use(require('./lib/histories'));
 app.use(require('./lib/groups'));
 app.use(require('./lib/pictures'));
 
-io.use(function(socket, next){
-  var handshake = socket.request;
-  if (  !handshake._query.token ) {
-      return next(null, false);
-    }
+streams = require('./lib/streams/streams.js')();
 
-    auth.validateToken(handshake._query.token, function(err, user, info) {
-      if (err) { return next(err, false); }
-      if (!user) { return next(null, false); }
-      if ( info.scope && info.scope.indexOf('admin') === -1 ) {
-        return next(null, false);
-      }
-      next(null, true);
-    });
 
-  next();
-});
+require('./lib/streams/socketHandler.js')(io, auth, streams);
 
 app.set('sockets', io.sockets);
-app.set('streams', streams);
 
 //{force: true}
 db.sequelize.sync().complete(function(err) {
