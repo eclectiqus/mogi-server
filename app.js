@@ -55,7 +55,7 @@ var auth = require('./lib/auth');
 app.post('/token', auth.tokenEndpoint);
 app.use(require('./lib/config/wizard'));
 app.use(require('./lib/users'));
-//TODO app.use(require('./lib/streams'));
+app.use(require('./lib/streams'));
 app.use(require('./lib/videos'));
 app.use(require('./lib/locations'));
 app.use(require('./lib/histories'));
@@ -68,6 +68,7 @@ streams = require('./lib/streams/streams.js')();
 require('./lib/streams/socketHandler.js')(io, auth, streams);
 
 app.set('sockets', io.sockets);
+app.set('streams', streams);
 
 //{force: true}
 db.sequelize.sync().complete(function(err) {
