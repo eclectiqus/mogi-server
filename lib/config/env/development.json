@@ -7,10 +7,10 @@
   "configured": true,
   "wowza": {
     "port": "1935",
-    "user": "mogi.wowza",
-    "password": "vBqVB8z8",
+    "user": "igarape",
+    "password": "igarape",
     "path": "/live/",
-    "ipAddress": "196.31.215.246"
+    "ipAddress": "192.168.1.72"
   },
   "email": {
     "from": "Igarape <igarapetech@gmail.com>",
