@@ -9,9 +9,9 @@ var groupName = "Cape Town",
 var db = require('./lib/db');
 
 
-group = db.Group.build({name: groupName, isAdmin: admin, lat: latitude, lng: longitude });
-group.save().success(function(group){
-    var user = db.User.build({
+group = db.group.build({name: groupName, isAdmin: admin, lat: latitude, lng: longitude });
+group.save().then(function(group){
+    var user = db.user.build({
         username : userName,
         email : userEmail,
         name : userName,
