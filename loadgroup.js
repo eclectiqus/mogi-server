@@ -6,6 +6,6 @@ var express = require('express'),
     auth = require('./lib/auth');
 
 
-group = db.Group.build({name: groupName, isAdmin: admin});
+group = db.group.build({name: groupName, isAdmin: admin});
 group.save();
 

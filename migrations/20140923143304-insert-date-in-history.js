@@ -4,7 +4,7 @@ module.exports = {
           'histories',
           'date',
           DataTypes.DATE
-      ).success(function () {
+      ).then(function () {
               migration.migrator.sequelize.query("update histories as h set date = h.\"createdAt\"");
               done();
           });

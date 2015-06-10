@@ -71,12 +71,12 @@ app.set('sockets', io.sockets);
 app.set('streams', streams);
 
 //{force: true}
-db.sequelize.sync().complete(function(err) {
-  if (err) {
-    throw err;
-  } else {
+db.sequelize.sync().then(function() {
+  //if (err) {
+  //  throw err;
+  //} else {
     server.listen(app.get('port'), function(){
       console.log('Express server listening on port ' + app.get('port'));
     });
-  }
+  //}
 });

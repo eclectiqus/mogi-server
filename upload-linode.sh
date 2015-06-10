@@ -16,6 +16,8 @@ forever stop app.js
 
 git pull
 
+npm install
+
 export NODE_ENV=production
 
 ./node_modules/sequelize/bin/sequelize migrate
@@ -27,6 +29,10 @@ echo 'Uploading admin'
 cd /home/mogi/mogi-admin/
 
 git pull
+
+npm install
+
+bower install
 
 grunt build
 
