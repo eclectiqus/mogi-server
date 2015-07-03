@@ -2,7 +2,7 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    queryInterface.addColumn("users", "language", DataTypes.STRING(5));
+    queryInterface.addColumn("users", "language", Sequelize.STRING(5));
   },
 
   down: function (queryInterface, Sequelize) {
