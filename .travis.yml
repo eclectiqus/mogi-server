@@ -7,6 +7,8 @@ before_install:
   - "npm install -g"
   - "npm install -g grunt-cli"
   - "npm cache clean"
+before_script:
+  - "grunt build"
 script:
   - "grunt test"
   - "grunt"
