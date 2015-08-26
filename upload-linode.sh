@@ -26,15 +26,15 @@ nohup forever start -o forever/out.log -e forever/err.log app.js
 
 echo 'Uploading admin'
 
-cd /home/mogi/mogi-admin/
-
-git pull
-
-npm install
-
-bower install
-
-grunt build
+#cd /home/mogi/mogi-admin/
+#
+#git pull
+#
+#npm install
+#
+#bower install
+#
+#grunt build
 
 exit
 "

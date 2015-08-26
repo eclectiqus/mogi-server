@@ -15,7 +15,7 @@
     "errorhandler": "1.3.6",
     "express": "4.12.4",
     "express-session": "1.11.2",
-    "fluent-ffmpeg": "1.7.1",
+    "fluent-ffmpeg": "2.0.1",
     "formidable": "~1.0.14",
     "grunt-forever": "~0.4.1",
     "jade": "^1.9.2",
