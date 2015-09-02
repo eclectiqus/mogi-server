@@ -5,6 +5,8 @@ env:
 node_js:
   - "0.10"
 before_install:
+  - rm lib/config/env/development.json
+  - mv lib/config/env/travisci.json lib/config/env/development.json
   - npm install supertest@1.0.1
   - npm install should@1.2.2
   - npm install proxyquire@0.5.1
