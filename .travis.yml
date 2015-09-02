@@ -6,13 +6,16 @@ node_js:
   - "0.10"
 before_install:
   - rm lib/config/env/development.json
+  - rm lib/config/env/test.json
   - mv lib/config/env/travisci.json lib/config/env/development.json
+  - mv lib/config/env/travisci.json lib/config/env/test.json
   - npm install supertest@1.0.1
   - npm install should@1.2.2
   - npm install proxyquire@0.5.1
   - npm install superagent@0.15.4
   - npm install mocha@2.2.5
   - npm install grunt@0.4.1
+  - npm install -g nodemon
   - npm install grunt-contrib-jshint@0.6.0
   - npm install grunt-contrib-nodeunit@0.2.0
   - npm install grunt-contrib-uglify@0.2.2
