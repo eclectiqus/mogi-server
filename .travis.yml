@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "0.10"
 before_install:
+  - export NODE_ENV=test
   - npm install supertest@1.0.1
   - npm install should@1.2.2
   - npm install proxyquire@0.5.1
@@ -19,7 +20,6 @@ before_install:
   - npm cache clean
 before_script:
   - psql -c 'create database copcastdb_test;' -U postgres
-  - "grunt build"
 script:
   - "grunt test"
   - "grunt"
