@@ -71,9 +71,10 @@ app.set('sockets', io.sockets);
 app.set('streams', streams);
 
 var option = {force: false};
-if (process.env.NODE_ENV == "test"){
+if (process.env.NODE_ENV == "traviscs"){
   option["force"] = true;
 }
+console.log("starting database for env: " + process.env.NODE_ENV);
 db.sequelize.sync(option).then(function() {
   //if (err) {
   //  throw err;
