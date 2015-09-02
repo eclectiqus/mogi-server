@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/igarape/mogi-server.svg?branch=master)](https://travis-ci.org/igarape/mogi-server)
+
 Mogi Application Server
 ===========
 
