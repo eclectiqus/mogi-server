@@ -2,8 +2,9 @@ language: node_js
 node_js:
   - "0.10"
 before_install:
-  - npm install -g grunt-cli
+  - npm install grunt@0.4.1
   - npm install
+  - npm install -g grunt-cli
   - npm cache clean
 before_script:
   - psql -c 'create database copcastdb_test;' -U postgres
