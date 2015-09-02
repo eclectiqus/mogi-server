@@ -1,9 +1,15 @@
 [![Build Status](https://travis-ci.org/igarape/mogi-server.svg?branch=master)](https://travis-ci.org/igarape/mogi-server)
 
-Mogi Application Server
+Copcast Server
 ===========
 
-Server API for the Project Mogi/SmartPolicing sollution
+Copcast Server is part of the Copcast solution to help improve police accountability using mobile phones to record the video and the audio and register their GPS location.
+
+Copcast Server is a server API developed with <a href="https://nodejs.org">Node.js</a> and <a href="http://expressjs.com">Express</a> 
+
+## Dev Installation
+
+First, install <a href="https://nodejs.org">Node.js</a> in your development machine. We are using, currently, version <b>0.10.40</b>.
 
 ## Building
 
