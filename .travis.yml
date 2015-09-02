@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-  - "0.12"
-  - "0.11"
   - "0.10"
 before_install:
   - "npm install -g"
   - "npm install -g grunt-cli"
   - "npm cache clean"
 before_script:
+  - psql -c 'create database copcastdb_test;' -U postgres
   - "grunt build"
 script:
   - "grunt test"

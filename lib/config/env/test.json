@@ -1,15 +1,8 @@
 {
   "tokenSecret" : "keyboardcat",
   "tokenDuration" : 1440,
-  "db" : "postgres://test:test@localhost:5432/test",
+  "db" : "postgres://postgres@localhost:5432/copcastdb_test",
   "googleApiKey" : "AIzaSyBz7uc4_GnOXaef9BIc7PEJmE8lxSQXEH0",
   "videoStorage" : "file",
-  "configured" : true,
-    "wowza": {
-        "port": "1935",
-        "user": "igarape",
-        "password": "igarape",
-        "path": "/live/",
-        "ipAddress": "192.168.1.5"
-    }
+  "configured" : true
 }

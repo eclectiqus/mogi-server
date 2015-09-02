@@ -70,8 +70,11 @@ require('./lib/streams/socketHandler.js')(io, auth, streams);
 app.set('sockets', io.sockets);
 app.set('streams', streams);
 
-//{force: true}
-db.sequelize.sync().then(function() {
+var option = {force: false};
+if (process.env.NODE_ENV == "test"){
+  option["force"] = true;
+}
+db.sequelize.sync(option).then(function() {
   //if (err) {
   //  throw err;
   //} else {
