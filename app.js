@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+console.log("starting copcast: " + process.env.NODE_ENV);
 var express = require('express')
   , http = require('http')
   , app = express()
