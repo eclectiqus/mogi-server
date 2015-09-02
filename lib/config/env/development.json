@@ -5,13 +5,6 @@
   "googleApiKey": "AIzaSyAs2DppqYg4xyj_Q38oAykxIl2BLwOR8bg",
   "videoStorage": "file",
   "configured": true,
-  "wowza": {
-    "port": "1935",
-    "user": "igarape",
-    "password": "igarape",
-    "path": "/live/",
-    "ipAddress": "192.168.1.72"
-  },
   "email": {
     "from": "Igarape <igarapetech@gmail.com>",
     "subject": "New Password",
