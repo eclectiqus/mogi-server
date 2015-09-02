@@ -2,7 +2,18 @@ language: node_js
 node_js:
   - "0.10"
 before_install:
+  - npm install supertest@1.0.1
+  - npm install should@1.2.2
+  - npm install proxyquire@0.5.1
+  - npm install superagent@0.15.4
+  - npm install mocha@2.2.5
   - npm install grunt@0.4.1
+  - npm install grunt-contrib-jshint@0.6.0
+  - npm install grunt-contrib-nodeunit@0.2.0
+  - npm install grunt-contrib-uglify@0.2.2
+  - npm install grunt-simple-mocha@0.4.0
+  - npm install grunt-nodemon@0.0.8
+  - npm install grunt-env@0.4.0
   - npm install
   - npm install -g grunt-cli
   - npm cache clean
