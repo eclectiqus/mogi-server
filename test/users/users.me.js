@@ -6,15 +6,18 @@ var request = require('supertest'),
     users = proxyquire('./../../lib/users', { './../auth' : auth, './../db' : db }),
     api = request(users);
 
-describe('Users Online Endpoint Tests', function() {
+describe('Users Me Endpoint Tests', function() {
 
-  beforeEach(function(done) {
-    db.sequelize.sync({ force : true }).complete(done);
-  });
-  
-  /*describe('When there is on online user', function() {
-    it('should return 200 with json', function(done) {
-      api.get('/me')
+  describe('When user is authenticated', function() {
+    var user = { id : 1, username : "test" };
+
+    beforeEach(function() {
+      auth.user = user;
+      auth.scope = 'client';
+    });
+
+     it('should return 200 with json', function(done) {
+      api.get('/users/me')
         .expect(200)
         .end(function(err, res) {
             res.body.username.should.equal(user.username);
@@ -22,5 +25,5 @@ describe('Users Online Endpoint Tests', function() {
             done();
         });
     });
-  });*/
+  });
 });
