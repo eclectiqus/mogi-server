@@ -24,6 +24,8 @@ export NODE_ENV=production
 
 nohup forever start -o forever/out.log -e forever/err.log app.js
 
+node correctVideoDuration.js
+
 echo 'Uploading admin'
 
 #cd /home/mogi/mogi-admin/
