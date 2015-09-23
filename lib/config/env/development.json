@@ -1,16 +1,4 @@
 {
-  "tokenSecret": "keyboardcat",
-  "tokenDuration": 9999999,
-  "db": "postgres://test:test@localhost:5432/dev",
-  "googleApiKey": "AIzaSyAs2DppqYg4xyj_Q38oAykxIl2BLwOR8bg",
-  "videoStorage": "file",
-  "configured": true,
-  "email": {
-    "from": "Igarape <igarapetech@gmail.com>",
-    "subject": "New Password",
-    "service": "Gmail",
-    "user": "igarapetech@gmail.com",
-    "pass": "igarape73",
-    "template": "forgotPass"
-  }
+  "db": "postgres://copcast_dev:$robocop@localhost:5432/copcast_dev",
+  "configured": true
 }
