@@ -1,9 +1,9 @@
 var
   db = require('./lib/db'),
-  storage = require('./lib/videos/storage'),
-  ffmpeg = require('fluent-ffmpeg');
+  storage = require('./lib/videos/storage');
 
 //search for all videos which have 0 or 1 as duration.
+console.log('will start looking for videos');
 db.video.findAll({where: {$or: [{duration: 0}, {duration: 1}]}}).then(function(videos){
   //find the mp4 files
   i = videos.length-1;
@@ -29,7 +29,12 @@ function correct(videos, i){
     storage.getTotaDuration(video, function(duration){
       console.log("new duration for video: "+duration+" - "+this.id);
       //include the metadata in the
-      this.duration = Math.ceil(duration);
+      if (Math.ceil(duration) == 0){
+        this.isValid = false;
+      } else {
+        this.duration = Math.ceil(duration);
+        this.isValid = true;
+      }
       this.save();
       correct(videos, i-1);
     });
