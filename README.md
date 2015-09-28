@@ -43,16 +43,16 @@ For both, edit the connection string and enter your database parameters, like _u
 Next, initialize your database:
 
 ```
-psql -U _username_ -f copcast-db.sql
+psql -U username -f copcast-db.sql
 sequelize db:migrate:old_schema
 sequelize db:migrate
 NODE_ENV=development node createAdminUser.js
 ```
+The last line will create your first user "admin" with the password "admin".
 
 
 ## Running
 
-The last line will create your first user "admin" with the password "admin".
 Finally, start your application:
 
 ```
@@ -62,8 +62,8 @@ NODE_ENV=development node app.js
 
 ## Deployment
 
-1. Create a production.json file at /lib/config/env/
-2. Save the db variable in the production.json for the server
+1. Create a _production.json_ file at _/lib/config/env/_
+2. Set your database connection parameters.
 3. On the project root folder run your service with _forever_.
 
 ```
