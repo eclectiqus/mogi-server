@@ -5,10 +5,10 @@ env:
 node_js:
   - "0.10"
 before_install:
-  - rm lib/config/env/development.json
-  - rm lib/config/env/test.json
-  - cp lib/config/env/travisci.json lib/config/env/development.json
-  - cp lib/config/env/travisci.json lib/config/env/test.json
+  - rm config/development.json
+  - rm config/test.json
+  - cp lib/config/template/travisci.json config/development.json
+  - cp lib/config/template/travisci.json config/test.json
   - npm install supertest@1.0.1
   - npm install should@1.2.2
   - npm install proxyquire@0.5.1
@@ -21,7 +21,7 @@ before_install:
   - npm install grunt-contrib-uglify@0.2.2
   - npm install grunt-simple-mocha@0.4.0
   - npm install grunt-nodemon@0.0.8
-  - npm install grunt-env@0.4.0
+  - npm install grunt-template@0.4.0
   - npm install
   - npm install -g grunt-cli
   - npm cache clean
