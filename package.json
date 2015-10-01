@@ -17,6 +17,7 @@
     "express-session": "1.11.2",
     "fluent-ffmpeg": "2.0.1",
     "formidable": "~1.0.14",
+    "glob": "^5.0.15",
     "grunt-forever": "~0.4.1",
     "jade": "^1.9.2",
     "jwt-simple": "^0.3.0",
