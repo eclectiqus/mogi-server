@@ -1,11 +1,15 @@
 'use strict';
 
 module.exports = {
-  up: function (queryInterface, DataTypes) {
-    queryInterface.addColumn("videos", "isValid", DataTypes.BOOLEAN);
+  up: function (queryInterface, DataTypes, done) {
+    queryInterface.addColumn("videos", "isValid", DataTypes.BOOLEAN).then(function() {
+      done();
+    });
   },
 
-  down: function (queryInterface, DataTypes) {
-    queryInterface.removeColumn("videos", "isValid");
+  down: function (queryInterface, DataTypes, done) {
+    queryInterface.removeColumn("videos", "isValid").then(function() {
+      done();
+    });
   }
 };

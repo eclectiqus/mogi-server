@@ -10,7 +10,8 @@ module.exports = {
           });
   },
   down: function(migration, DataTypes, done) {
-    migration.removeColumn('histories', 'date');
-    done()
+    migration.removeColumn('histories', 'date').then(function() {
+      done();
+    });
   }
 }

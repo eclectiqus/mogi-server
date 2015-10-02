@@ -19,11 +19,13 @@ module.exports = {
               userId: DataTypes.BIGINT
           },
           {}
-      )
-    done()
+      ).then(function() {
+          done();
+        });
   },
   down: function(migration, DataTypes, done) {
-    migration.dropTable('histories')
-    done()
+    migration.dropTable('histories').then(function(){
+      done();
+    });
   }
 }
