@@ -20,10 +20,6 @@ group.save().then(function(group){
     });
 
     user.hashPassword(userPass, function() {
-        user.save();
+        user.save().then(function() {process.exit();});
     });
 });
-
-
-
-
