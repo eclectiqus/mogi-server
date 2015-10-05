@@ -1,7 +1,7 @@
 {
   "tokenSecret": "keyboardcat",
   "tokenDuration": 9999999,
-  "db": "postgres://copcastuser:#coppwd@database:5432/copcast",
+  "db": "postgres://copcastuser:PWD@database:5432/copcast",
   "crypto": {
     "partitions": 3,
     "key": "5wyv4fnn2czydg74vgywrm5hbg8s6t",
