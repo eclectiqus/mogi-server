@@ -6,7 +6,7 @@ Copcast Server
 
 Copcast Server is part of the Copcast solution to help improve police accountability using mobile phones to record the video and the audio and register their GPS location.
 
-Copcast Server is a server API developed with <a href="https://nodejs.org">Node.js</a> and <a href="http://expressjs.com">Express</a>
+Copcast Server is a server API developed with <a href="https://nodejs.org">Node.js</a> and <a href="http://expressjs.com">Express</a> 
 
 
 ## Dev Installation
