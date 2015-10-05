@@ -1,7 +1,14 @@
 {
   "tokenSecret": "keyboardcat",
   "tokenDuration": 9999999,
-  "db": "postgres://copcast:$robocop@localhost:5432/copcast",
+  "db": "postgres://copcastuser:#coppwd@database:5432/copcast",
+  "crypto": {
+    "partitions": 3,
+    "key": "5wyv4fnn2czydg74vgywrm5hbg8s6t",
+    "challenge": "Elt/abz0ldFzGwDsQlKmWcZ8+wvEPdOPOIHPhwHtCy4=",
+    "salt": "7892393862398634875689"
+  },
+
   "googleApiKey": "AIzaSyAs2DppqYg4xyj_Q38oAykxIl2BLwOR8bg",
   "videoStorage": "file",
   "configured": true,
