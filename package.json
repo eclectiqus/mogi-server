@@ -38,7 +38,7 @@
     "passport-http": "0.2.x",
     "passport-http-bearer": "0.2.x",
     "passport-local": "1.0.x",
-    "pg": "~2.8.4",
+    "pg": "~2.11.2",
     "pg-hstore": "^2.3.2",
     "q": "~0.9.7",
     "rimraf": "2.2.x",
