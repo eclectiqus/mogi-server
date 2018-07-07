@@ -4,7 +4,8 @@
   "scripts": {
     "start": "nodemon app.js",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "1.17.2",
@@ -13,7 +14,7 @@
     "easy-pbkdf2": "~0.1.1",
     "easyimage": "^2.0.3",
     "ejs": "2.5.5",
-    "email-templates": "2.0.0",
+    "email-templates": "2.4.1",
     "errorhandler": "1.4.3",
     "express": "4.15.3",
     "express-session": "1.15.3",
@@ -47,7 +48,7 @@
     "serve-favicon": "2.4.3",
     "socket.io": "1.5.0",
     "temporary": "0.0.8",
-    "snyk": "^1.31.0"
+    "snyk": "^1.88.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
