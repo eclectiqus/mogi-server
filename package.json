@@ -21,7 +21,7 @@
     "formidable": "~1.0.14",
     "grunt-forever": "~0.4.1",
     "jade": "^1.9.2",
-    "jwt-simple": "^0.3.0",
+    "jwt-simple": "^0.5.3",
     "lodash": "~2.4.1",
     "method-override": "2.3.9",
     "mime": "1.2.x",
