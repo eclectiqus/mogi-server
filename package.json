@@ -45,7 +45,7 @@
     "sequelize": "^4.44.4",
     "sequelize-cli": "^5.5.0",
     "serve-favicon": "2.4.5",
-    "socket.io": "2.0.2",
+    "socket.io": "3.0.0",
     "temporary": "0.0.8",
     "snyk": "^1.366.2"
   },
