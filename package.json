@@ -33,7 +33,7 @@
     "node-fs": "~0.1.7",
     "node-gcm": "^0.11.1",
     "node-uuid": "1.4.x",
-    "nodemailer": "6.4.16",
+    "nodemailer": "6.6.1",
     "passport": "~0.1.x",
     "passport-http": "0.2.x",
     "passport-http-bearer": "0.2.x",
