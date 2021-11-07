@@ -43,7 +43,7 @@
     "q": "~0.9.7",
     "rimraf": "2.2.x",
     "sequelize": "^4.44.4",
-    "sequelize-cli": "^5.5.0",
+    "sequelize-cli": "^6.3.0",
     "serve-favicon": "2.4.5",
     "socket.io": "3.0.0",
     "temporary": "0.0.8",
