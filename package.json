@@ -26,7 +26,7 @@
     "method-override": "2.3.10",
     "mime": "1.4.1",
     "mkdirp": "0.5.x",
-    "moment": "~2.19.3",
+    "moment": "~2.29.4",
     "morgan": "1.9.1",
     "multer": "1.0.0",
     "mv": "~2.0.3",
