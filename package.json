@@ -15,7 +15,7 @@
     "ejs": "3.1.6",
     "email-templates": "2.6.0",
     "errorhandler": "1.4.3",
-    "express": "4.16.0",
+    "express": "4.20.0",
     "express-session": "1.15.6",
     "fluent-ffmpeg": "2.0.1",
     "formidable": "~1.0.14",
@@ -45,7 +45,7 @@
     "sequelize": "^4.44.4",
     "sequelize-cli": "^5.5.0",
     "serve-favicon": "2.4.5",
-    "socket.io": "3.0.0",
+    "socket.io": "4.8.0",
     "temporary": "0.0.8",
     "snyk": "^1.366.2"
   },
